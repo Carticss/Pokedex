@@ -6,6 +6,10 @@ export default function PokemonList(props) {
     
     const { pokemons } = props
 
+    const loadMore = () => {
+        console.log("Cargar Mas");
+    }
+
     return (
         <FlatList 
             data={pokemons}
@@ -14,6 +18,7 @@ export default function PokemonList(props) {
             keyExtractor={(pokemon) => String(pokemon.id)}
             renderItem={({item}) => <PokemonCard pokemon={item} />}
             contentContainerStyle={styles.flatListContentContainer}
+            
         />
     )
 }
